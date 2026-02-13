@@ -1,0 +1,97 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 10px;
+  padding: 10px;
+  background-color: #6699CC;
+}
+
+h1 {
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  list-style: none;
+  background-color: #676767;
+  padding: 10px;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.nav li {
+  margin-right: 20px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav a:hover,
+.nav a:focus {
+  background-color: #ffffff;
+  color: #2f6f6f;
+}
+
+.nav a.active {
+  background-color: #ffffff;
+  color: #2f6f6f;
+}
+
+.container {
+  padding: 20px;
+}
+
+form label {
+  display: block;
+  margin-top: 10px;
+}
+
+form input, form select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+}
+
+/* Double line separator */
+.double-line {
+  border: none;
+  border-top: 4px double #bdbdbd;
+  margin: 20px auto;
+  width: 90%;
+}
+
+.content {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;   /* centers the text block */
+}
+
+/* To stack images on smaller screens */
+@media (max-width: 600px) {
+  .image-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Image row container */
+.image-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px auto;
+  flex-wrap: wrap;   /* allows wrapping if screen is small */
+}
+
+/* Images themselves */
+.image-row img {
+  width: 180px;        /* wallet-sized */
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
