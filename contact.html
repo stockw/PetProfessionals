@@ -10,7 +10,7 @@
     <div class="title">
         <h1>Paradigm Pet Professionals</h1>
     </div>
-    <nav>
+    <!-- <nav>
         <ul class="nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="cats.html">Cats</a></li>
@@ -18,47 +18,82 @@
             <li><a href="fish.html">Fish</a></li>
             <li><a href="contact.html" class="active">Contact Us</a></li>
         </ul>
+    </nav> -->
+
+     <nav>
+        <div class="nav-container">
+            <ul class="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cats.html">Cats</a></li>
+            <li><a href="dogs.html">Dogs</a></li>
+            <li><a href="fish.html">Fish</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+            <form class="nav-search" action="#" method="get">
+            <label for="search" class="visually-hidden">Search</label>
+            <input
+                type="search"
+                id="search"
+                name="q"
+                placeholder="Search..."
+            >
+            <button type="submit">Go</button>
+            </form>
+        </div>
     </nav>
 
-    <div>
-        <h1>Contact a Pet Professional</h1>
+    <hr class="double-line">
 
-        <form action="#" method="post">
-            <h2>Pet Owner's Information</h2>
-            <label for="name">First and Last Name</label>
-            <input type="text" id="name" name="name" required>
+    <div class="content">
+        <h2>Contact a Pet Professional</h2>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+        <div class="form-container">
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Pet Owner's Information</legend>
 
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone">
+                    <label for="name">First and Last Name</label>
+                    <input type="text" id="name" name="name" required>
 
-            <label for="timezone">Time Zone</label>
-            <select id="timezone" name="timezone">
-                <option value="EST">EST</option>
-                <option value="CST">CST</option>
-                <option value="MST">MST</option>
-                <option value="PST">PST</option>
-            </select>
-            <h2>Pet Informartion</h2>
-            <label for="petname">Pet Name</label>
-            <input type="text" id="petname" name="petname">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
 
-            <label for="pettype">Pet Type</label>
-            <select id="pettype" name="pettype">
-                <option value="Cat">Cat</option>
-                <option value="Dog">Dog</option>
-                <option value="Fish">Fish</option>
-                <option value="Other">Other</option>
-            </select>
-            
-            <label for="petage">Pet age</label>
-            <input type="number" name="petage" id="petage" min="0">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
 
-            <br><br>
-            <input type="submit" value="Submit for a Consultation">
-        </form>
+                    <label for="timezone">Time Zone</label>
+                    <select id="timezone" name="timezone">
+                        <option value="EST">EST</option>
+                        <option value="CST">CST</option>
+                        <option value="MST">MST</option>
+                        <option value="PST">PST</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Pet Information</legend>
+
+                    <label for="petname">Pet Name</label>
+                    <input type="text" id="petname" name="petname">
+
+                    <label for="pettype">Pet Type</label>
+                    <select id="pettype" name="pettype">
+                        <option value="Cat">Cat</option>
+                        <option value="Dog">Dog</option>
+                        <option value="Fish">Fish</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <label for="petage">Pet Age</label>
+                    <input type="number" name="petage" id="petage" min="0">
+                </fieldset>
+
+                <div class="form-actions">
+                    <input type="submit" value="Submit for a Consultation">
+                </div>    
+            </form>
+        </div>
     </div>
 </body>
 </html>

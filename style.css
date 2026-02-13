@@ -1,25 +1,49 @@
 body {
   font-family: Arial, sans-serif;
-  margin: 10px;
-  padding: 10px;
+  margin: 0;
+  padding: 0;
   background-color: #6699CC;
+  color: #000000;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 h1 {
   text-align: center;
 }
 
-.nav {
+/* .nav {
   display: flex;
   list-style: none;
   background-color: #676767;
-  padding: 10px;
+  padding: 0px;
   margin: 0 auto;
   width: 90%;
+  max-width: 900px;
+} */
+
+.nav {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Nav container holds links + search */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #676767;
+  padding: 10px;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .nav li {
   margin-right: 20px;
+  display: flex;
 }
 
 .nav a {
@@ -32,18 +56,75 @@ h1 {
 }
 
 .nav a:hover,
-.nav a:focus {
+.nav a:focus,
+.nav a.active {
   background-color: #ffffff;
   color: #2f6f6f;
 }
+
+a:focus,
+button:focus,
+input:focus {
+  outline: 3px solid #2f6f6f;
+  outline-offset: 2px;
+}
+
 
 .nav a.active {
   background-color: #ffffff;
   color: #2f6f6f;
 }
 
+/* Styling for Search Bar */
+.nav-search {
+  display: flex;
+  gap: 5px;
+}
+
+.nav-search input[type="search"] {
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.nav-search button {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: none;
+  background-color: #2f6f6f;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-search button:hover,
+.nav-search button:focus {
+  background-color: #1f4f4f;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .container {
   padding: 20px;
+}
+
+/* Style for Contact Form */
+.form-container {
+  width: 90%;
+  max-width: 500px;
+  margin: 0;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
 }
 
 form label {
@@ -57,18 +138,54 @@ form input, form select {
   margin-top: 4px;
 }
 
-/* Double line separator */
-.double-line {
-  border: none;
-  border-top: 4px double #bdbdbd;
-  margin: 20px auto;
-  width: 90%;
+fieldset {
+  border: 2px solid #bdbdbd;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 20px;
 }
 
-.content {
+legend {
+  font-weight: bold;
+  padding: 0 8px;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.form-actions input[type="submit"] {
+  background-color: #2f6f6f;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.form-actions input[type="submit"]:hover,
+.form-actions input[type="submit"]:focus {
+  background-color: #1f4f4f;
+}
+
+input:required,
+select:required {
+  border-left: 4px solid #2f6f6f;
+}
+
+input:invalid,
+select:invalid {
+  border-left: 4px solid #b00020;
+}
+
+/* Double line separator and content alignment */
+.content,
+.double-line {
   width: 90%;
   max-width: 900px;
-  margin: 0 auto;   /* centers the text block */
+  margin: 20px auto;
 }
 
 /* To stack images on smaller screens */
@@ -76,6 +193,13 @@ form input, form select {
   .image-row {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 10px;
   }
 }
 
@@ -91,6 +215,7 @@ form input, form select {
 /* Images themselves */
 .image-row img {
   width: 180px;        /* wallet-sized */
+  max-width: 100%;
   height: auto;
   border-radius: 8px;
   object-fit: cover;
