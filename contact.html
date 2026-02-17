@@ -7,9 +7,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="title">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+     
+    <header class="site-header">
+        <a href="index.html" class="logo-link">
+        <img class="logo" src="images/petshoplogo.png" alt="Paradigm Pet Professionals home" height="142" width="140">
+        </a>
         <h1>Paradigm Pet Professionals</h1>
-    </div>
+    </header>
     <!-- <nav>
         <ul class="nav">
             <li><a href="index.html">Home</a></li>
@@ -27,7 +32,7 @@
             <li><a href="cats.html">Cats</a></li>
             <li><a href="dogs.html">Dogs</a></li>
             <li><a href="fish.html">Fish</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html" class="active" aria-current="page">Contact Us</a></li>
             </ul>
 
             <form class="nav-search" action="#" method="get">
@@ -45,7 +50,7 @@
 
     <hr class="double-line">
 
-    <div class="content">
+    <main  id="main-content" class="content">
         <h2>Contact a Pet Professional</h2>
 
         <div class="form-container">
@@ -54,13 +59,14 @@
                     <legend>Pet Owner's Information</legend>
 
                     <label for="name">First and Last Name</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" required aria-required="true">
 
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" required aria-required="true">
 
                     <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone">
+                    <input type="tel" id="phone" name="phone" aria-describedby="phone-help">
+                    <small id="phone-help">Optional</small>
 
                     <label for="timezone">Time Zone</label>
                     <select id="timezone" name="timezone">
@@ -94,6 +100,6 @@
                 </div>    
             </form>
         </div>
-    </div>
+    </main>
 </body>
 </html>
